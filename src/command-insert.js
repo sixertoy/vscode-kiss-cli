@@ -38,7 +38,8 @@ async function insertTemplate () {
 
   // start
   try {
-      const cliCommand = `kiss --raw ${templateName}`
+      const cwd = vscode.workspace.workspaceFolders[0].uri.path;
+      const cliCommand = `kiss --raw ${templateName} ${cwd}`
       const { stdout: templateContent } = await exec(cliCommand);
       editor.edit(async (textEditor) => {
           textEditor.replace(selectedText, templateContent);
