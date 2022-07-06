@@ -38,14 +38,14 @@ async function insertTemplate () {
 
   // start
   try {
-      const cliCommand = `kiss --atom ${templateName}`
+      const cliCommand = `kiss --raw ${templateName}`
       const { stdout: templateContent } = await exec(cliCommand);
       editor.edit(async (textEditor) => {
           textEditor.replace(selectedText, templateContent);
       });
   } catch (err) {
-      const msg = `Unable to load template file '${templateName}'`
-      vscode.window.showErrorMessage(msg);
+      // const msg = `Unable to load template file '${templateName}'`
+      vscode.window.showErrorMessage(err.message);
       return false;
   }
 }
