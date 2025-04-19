@@ -9,7 +9,7 @@ Simple wrapper around [kiss-cli](https://www.npmjs.com/package/kiss-cli) shareab
 **[kiss-cli](https://www.npmjs.com/package/kiss-cli) should be install globally**
 
 ```bash
-npm install --global kiss-cli
+npx kiss-cli
 # or yarn global add kiss-cli
 # then check dans le terminal que kiss est bien installé
 # $ kiss
